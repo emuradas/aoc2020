@@ -100,4 +100,18 @@ for seat in input_pt1:
     seat_id = get_seat_id(result)
     seat_ids.append(seat_id)
 
+seat_ids.sort()
+
+
+with open('seat_ids.txt', 'w') as w:
+    for seat_id in seat_ids:
+        seat = str(seat_id) + '\n'
+        w.write(seat)
+
+
+# Get missing seat
+seats_range = range(23, 829)
+
+missing_seats = [x for x in seats_range if x not in seat_ids]
+missing_seats
 max(seat_ids)
